@@ -9,49 +9,12 @@ public class Main {
 
         int resultado;
 
-        int nums [] = {0,1,2,2,3,0,4,2};
-        int val = 2;
+        int nums [] = {0,0,1,1,1,2,2,3,3,4};
 
-        resultado = removeElement(nums,val);
-        System.out.println(resultado);
+        EliminarDuplicado26 prueba = new EliminarDuplicado26();
+        resultado = prueba.remonveDuplicates(nums);
+        System.out.println("el resultado es "+resultado);
 
     }
-
-    public static int removeElement(int[] nums, int val){
-        int resultado;
-        List<String> lista = new ArrayList<>();
-        int contador =0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i] != val){
-                String aux = String.valueOf(nums[i]);
-                lista.add(aux);
-
-            }else{
-                contador++;
-            }
-
-        }
-        int j=0;
-        for(String aux :lista){
-            System.out.println(aux);
-            nums[j] = Integer.parseInt(aux);
-            j++;
-        }
-
-        resultado = lista.size();
-
-        for(int i=0;i<contador;i++){
-            lista.add("_");
-        }
-
-
-
-
-
-        return resultado;
-    }
-
-
-
 
 }
