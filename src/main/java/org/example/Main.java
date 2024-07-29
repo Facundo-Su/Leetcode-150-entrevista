@@ -9,10 +9,10 @@ public class Main {
 
         int resultado;
 
-        int nums [] = {0,0,1,1,1,2,2,3,3,4};
+        int nums [] = {1,1,1,2,2,3};
 
-        EliminarDuplicado26 prueba = new EliminarDuplicado26();
-        resultado = prueba.remonveDuplicates(nums);
+        EliminarDuplicadoV280 prueba = new EliminarDuplicadoV280();
+        resultado = prueba.removeDuplicates(nums);
         System.out.println("el resultado es "+resultado);
 
     }
