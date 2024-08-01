@@ -9,11 +9,11 @@ public class Main {
 
         int resultado;
 
-        int nums [] = {1,1,1,2,2,3};
+        int nums [] = {1,2,3,4,5,6,7};
 
-        EliminarDuplicadoV280 prueba = new EliminarDuplicadoV280();
-        resultado = prueba.removeDuplicates(nums);
-        System.out.println("el resultado es "+resultado);
+        RotateArray_189 prueba = new RotateArray_189();
+        prueba.rotate(nums,3);
+//System.out.println("el resultado es "+resultado);
 
     }
 
