@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.text.StyledEditorKit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,13 +8,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        int resultado;
 
-        int nums [] = {1,2,3,4,5,6,7};
+        int nums [] = {2,3,0,1,4};
 
-        RotateArray_189 prueba = new RotateArray_189();
-        prueba.rotate(nums,3);
-//System.out.println("el resultado es "+resultado);
+        Saltos_55 prueba = new Saltos_55();
+        Boolean resultado = prueba.canJump(nums);
+        System.out.println("el resultado es "+resultado);
 
     }
 
