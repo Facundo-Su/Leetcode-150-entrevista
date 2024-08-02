@@ -2,28 +2,33 @@ package org.example;
 
 public class saltos2_45 {
     public int canJump2(int[] nums) {
+
         int n = nums.length;
-        if (n <= 1) {
-            return 0;
+        int actual_posicion =0;
+        int maximo_posicion=0;
+        int salto=0;
+
+        if(n<1){
+            return 1;
         }
 
-        int jumps = 0;
-        int currentEnd = 0;
-        int farthest = 0;
+        for(int i=0;i<n;i++){
+            maximo_posicion = Math.max(maximo_posicion,i+nums[i]);
 
-        for (int i = 0; i < n - 1; i++) {
-            farthest = Math.max(farthest, i + nums[i]);
+            if(actual_posicion == i){
+                salto++;
 
-            if (i == currentEnd) {
-                jumps++;
-                currentEnd = farthest;
+                actual_posicion = maximo_posicion;
 
-                if (currentEnd >= n - 1) {
+                if(actual_posicion>=n-1){
                     break;
                 }
+
             }
+
         }
 
-        return jumps;
+
+        return salto;
     }
 }
