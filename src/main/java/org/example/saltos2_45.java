@@ -31,4 +31,28 @@ public class saltos2_45 {
 
         return salto;
     }
+
+    private int salto(int nums []){
+
+        int paso_actual =0;
+        int paso_maximo=0;
+        int salto =0;
+
+        for(int i =1;i<nums.length;i++){
+            paso_maximo = Math.max(paso_maximo,nums[i]);
+            if(paso_actual == i){
+                salto ++;
+                paso_actual = paso_maximo;
+                if(paso_actual > nums.length){
+                    break;
+                }
+            }
+
+        }
+
+        return 0;
+
+    }
+
+
 }

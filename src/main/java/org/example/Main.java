@@ -8,12 +8,20 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        Integer numero =10001001;
+        int contador=0;
 
-        int nums [] = {2,3,0,1,4};
+        String numero_texto= String.valueOf(numero);
 
-        Saltos_55 prueba = new Saltos_55();
-        Boolean resultado = prueba.canJump(nums);
-        System.out.println("el resultado es "+resultado);
+        for(int i=0;i<numero_texto.length();i++){
+            if(numero_texto.charAt(i) == '1'){
+                System.out.println("aparecio "+contador+" digito");
+                contador=0;
+            }else{
+                contador++;
+            }
+
+        }
 
     }
 
