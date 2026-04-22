@@ -4,31 +4,20 @@ public class EliminarDuplicado26 {
 
     public int remonveDuplicates(int [] nums){
 
-        int indexeado=0;
-        Boolean coincide = false;
+        int contador=1;
+        int repetido;
 
-        for(int i=0;i<nums.length;i++){
+        repetido= nums[0];
 
-            for(int j=0;j<i;j++){
-                if(nums[i] == nums[j]){
-                    coincide = true;
-                    break;
-                }
+        for (int i=1;i<nums.length;i++){
+            if(nums[i]!=repetido){
+                repetido= nums[i];
+                nums[contador]=nums[i];
+                contador++;
             }
-
-            if(!coincide){
-                nums[indexeado] = nums[i];
-                indexeado++;
-            }
-            coincide = false;
-
         }
 
-        for(int i=0;i< nums.length;i++){
-            System.out.println(nums[i]);
-        }
+        return contador;
 
-
-        return indexeado;
     }
 }
