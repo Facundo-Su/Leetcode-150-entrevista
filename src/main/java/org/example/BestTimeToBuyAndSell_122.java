@@ -3,26 +3,20 @@ package org.example;
 public class BestTimeToBuyAndSell_122 {
     public int maxProfit(int[] prices) {
 
-        int max_ganancia =0;
-        int minimo = Integer.MAX_VALUE;
+        int precioMenor=prices[0];
+        int profit=0;
 
-        for(int precio : prices){
+        for (int i=1;i<prices.length;i++){
 
-            if(precio<minimo){
-                minimo = precio;
+            if(precioMenor>prices[i]){
+                precioMenor = prices[i];
             }else{
-                int ganancia = precio - minimo;
-                max_ganancia+=ganancia;
-                minimo = precio;
-
+                profit += (prices[i] - precioMenor);
+                precioMenor=prices[i];
             }
 
-
         }
-
-        return max_ganancia;
-
-
+        return profit;
     }
 
 }

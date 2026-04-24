@@ -3,56 +3,39 @@ package org.example;
 public class saltos2_45 {
     public int canJump2(int[] nums) {
 
-        int n = nums.length;
-        int actual_posicion =0;
-        int maximo_posicion=0;
-        int salto=0;
+        int max_alcance= nums[0];
+        int max_actual = nums[0];
+        int resultado =1;
 
-        if(n<1){
-            return 1;
+        if(nums.length ==1){
+            return 0;
         }
 
-        for(int i=0;i<n;i++){
-            maximo_posicion = Math.max(maximo_posicion,i+nums[i]);
+        for(int i=1;i< nums.length;i++){
 
-            if(actual_posicion == i){
-                salto++;
+            if(nums[i] + i >max_alcance){
+                max_alcance = nums[i] + i;
+            }
 
-                actual_posicion = maximo_posicion;
+            if(i==max_actual){
 
-                if(actual_posicion>=n-1){
-                    break;
+                if(max_actual<nums.length-1){
+                    resultado++;
                 }
+
+                max_actual= max_alcance;
+                if(max_alcance>= nums.length-1){
+                    return resultado;
+                }
+
 
             }
 
         }
 
-
-        return salto;
+        return resultado;
     }
 
-    private int salto(int nums []){
-
-        int paso_actual =0;
-        int paso_maximo=0;
-        int salto =0;
-
-        for(int i =1;i<nums.length;i++){
-            paso_maximo = Math.max(paso_maximo,nums[i]);
-            if(paso_actual == i){
-                salto ++;
-                paso_actual = paso_maximo;
-                if(paso_actual > nums.length){
-                    break;
-                }
-            }
-
-        }
-
-        return 0;
-
-    }
 
 
 }
